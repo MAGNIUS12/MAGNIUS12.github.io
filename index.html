@@ -173,6 +173,104 @@ footer {
 * {
   transition: all 0.2s ease;
 }
+/* 🔥 NIVEL DIOS DESIGN */
+
+/* FONDO PREMIUM */
+body {
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+}
+
+/* NAV GLASS EFFECT */
+nav {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* HERO MÁS PRO */
+.hero h2 {
+  font-size: 70px;
+  background: linear-gradient(45deg, #fff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero button {
+  border-radius: 30px;
+}
+
+.hero button:hover {
+  box-shadow: 0 0 20px #00ff88;
+}
+
+/* CARDS ULTRA PRO */
+.card {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(0,255,136,0.2), transparent);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* IMAGEN MÁS PRO */
+.card img {
+  transition: 0.5s;
+}
+
+.card:hover img {
+  transform: scale(1.12) rotate(1deg);
+}
+
+/* TEXTO PREMIUM */
+.card h4 {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 18px;
+  color: #00ff88;
+}
+
+/* BOTÓN DIOS */
+.buy {
+  border-radius: 30px;
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+}
+
+.buy:hover {
+  box-shadow: 0 0 25px #00ff88;
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ANIMACIÓN AL CARGAR */
+.card {
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
 </head>

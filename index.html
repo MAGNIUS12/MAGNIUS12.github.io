@@ -273,11 +273,40 @@ html {
     transform: translateY(0);
   }
 }
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 1s ease;
+}
+
+#intro h1 {
+  font-size: 80px;
+  font-family: 'Oswald';
+  letter-spacing: 10px;
+  background: linear-gradient(45deg, #fff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+#intro button {
+   
 </style>
 </head>
 
 <body>
 
+<div id="intro">
+  <h1>MAGNIUS</h1>
+  <button onclick="enterSite()">ENTRAR</button>
+</div>
+ 
 <nav>
   <h1>MAGNIUS</h1>
 </nav>

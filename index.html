@@ -20,16 +20,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* TOP BAR */
-.topbar {
-  background: #000;
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #111;
-}
-
 /* NAV */
 nav {
   position: fixed;
@@ -37,8 +27,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.6);
 }
 
 nav h1 {
@@ -50,7 +39,6 @@ nav a {
   margin-left: 30px;
   text-decoration: none;
   color: white;
-  font-size: 0.9rem;
 }
 
 /* HERO */
@@ -70,21 +58,15 @@ nav a {
 
 .hero p {
   margin-top: 10px;
-  letter-spacing: 2px;
 }
 
 .hero button {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 15px 40px;
   border: 1px solid white;
   background: transparent;
   color: white;
   cursor: pointer;
-}
-
-.hero button:hover {
-  background: white;
-  color: black;
 }
 
 /* PRODUCTS */
@@ -100,7 +82,7 @@ nav a {
 
 .card img {
   width: 100%;
-  height: 350px;
+  height: 320px;
   object-fit: cover;
 }
 
@@ -112,10 +94,10 @@ nav a {
   font-family: 'Oswald';
 }
 
-button.buy {
+.buy {
   margin-top: 10px;
-  padding: 10px;
   width: 100%;
+  padding: 10px;
   background: white;
   border: none;
   cursor: pointer;
@@ -125,7 +107,6 @@ button.buy {
 footer {
   text-align: center;
   padding: 40px;
-  font-size: 0.8rem;
   opacity: 0.5;
 }
 </style>
@@ -133,15 +114,11 @@ footer {
 
 <body>
 
-<div class="topbar">
-  FREE SHIPPING +50€ — DROP 01 — LIMITED STOCK
-</div>
-
 <nav>
   <h1>MAGNIUS</h1>
   <div>
     <a href="#">SHOP</a>
-    <a href="#">INSTAGRAM</a>
+    <a href="#">CONTACT</a>
   </div>
 </nav>
 
@@ -149,104 +126,76 @@ footer {
   <div>
     <h2>MAGNIUS</h2>
     <p>NOT FOR EVERYONE</p>
-    <button onclick="window.location.href='https://instagram.com/TUUSUARIO'">
+    <button onclick="document.getElementById('shop').scrollIntoView()">
       SHOP NOW
     </button>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="shop">
   <h2 style="margin-bottom:40px;">DROP 01</h2>
 
   <div class="products">
-<div class="card">
-    <img src="images/back-in-black.png">
-    <div class="card-info"><h4>BACK IN BLACK</h4><p>30€</p><button class="buy">Comprar</button></div>
-  </div>
 
-  <div class="card">
-    <img src="images/broken-black.png">
-    <div class="card-info"><h4>BROKEN BLACK</h4><p>32€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/back-in-black.png">
+      <div class="card-info"><h4>BACK IN BLACK</h4><p>30€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/dark-fade.png">
-    <div class="card-info"><h4>DARK FADE</h4><p>28€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/broken-black.png">
+      <div class="card-info"><h4>BROKEN BLACK</h4><p>32€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/double-white-broken.png">
-    <div class="card-info"><h4>DOUBLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/dark-fade.png">
+      <div class="card-info"><h4>DARK FADE</h4><p>28€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/green-white.png">
-    <div class="card-info"><h4>GREEN WHITE</h4><p>29€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/double-white-broken.png">
+      <div class="card-info"><h4>DOUBLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/o-green.png">
-    <div class="card-info"><h4>O GREEN</h4><p>31€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/simple-beige.png">
+      <div class="card-info"><h4>SIMPLE BEIGE</h4><p>33€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/simple-beige.png">
-    <div class="card-info"><h4>SIMPLE BEIGE</h4><p>33€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/simple-green.png">
+      <div class="card-info"><h4>SIMPLE GREEN</h4><p>27€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/simple-green.png">
-    <div class="card-info"><h4>SIMPLE GREEN</h4><p>27€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/simple-red.png">
+      <div class="card-info"><h4>SIMPLE RED</h4><p>34€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/simple-red.png">
-    <div class="card-info"><h4>SIMPLE RED</h4><p>34€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/soft-blue.png">
+      <div class="card-info"><h4>SOFT BLUE</h4><p>36€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/soft-blue.png">
-    <div class="card-info"><h4>SOFT BLUE</h4><p>36€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/triple-white.png">
+      <div class="card-info"><h4>TRIPLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/toro-beige.png">
-    <div class="card-info"><h4>BEIGE BULL</h4><p>30€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/negra.png">
+      <div class="card-info"><h4>BLACK PREMIUM</h4><p>35€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/toro-blue.png">
-    <div class="card-info"><h4>BLUE BULL</h4><p>32€</p><button class="buy">Comprar</button></div>
-  </div>
+    <div class="card">
+      <img src="images/blanca.png">
+      <div class="card-info"><h4>WHITE CORE</h4><p>29€</p><button class="buy">Comprar</button></div>
+    </div>
 
-  <div class="card">
-    <img src="images/triple-brown.png">
-    <div class="card-info"><h4>TRIPLE BROWN</h4><p>29€</p><button class="buy">Comprar</button></div>
-  </div>
-
-  <div class="card">
-    <img src="images/triple-white.png">
-    <div class="card-info"><h4>TRIPLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
-  </div>
-
-  <div class="card">
-    <img src="images/blanca.png">
-    <div class="card-info"><h4>WHITE CORE</h4><p>29€</p><button class="buy">Comprar</button></div>
-  </div>
-
-  <div class="card">
-    <img src="images/negra.png">
-    <div class="card-info"><h4>BLACK PREMIUM</h4><p>35€</p><button class="buy">Comprar</button></div>
-  </div>
-
-  <div class="card">
-    <img src="images/roja.png">
-    <div class="card-info"><h4>RED STREET</h4><p>32€</p><button class="buy">Comprar</button></div>
-  </div>
-
-</div>
-    
-    
+    <div class="card">
+      <img src="images/roja.png">
+      <div class="card-info"><h4>RED STREET</h4><p>32€</p><button class="buy">Comprar</button></div>
+    </div>
 
   </div>
 </section>

@@ -1,112 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Magnius</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #111;
-      color: white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOID STREETWEAR</title>
 
-    header {
-      background: black;
-      padding: 20px;
-      text-align: center;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
 
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-      background: url('https://via.placeholder.com/800x300') center/cover;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
 
-    .container {
-      padding: 20px;
-    }
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  z-index: 1000;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+}
 
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
+nav h1 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 3px;
+}
 
-    .card {
-      background: #1a1a1a;
-      border-radius: 15px;
-      width: 220px;
-      padding: 15px;
-      text-align: center;
-      transition: 0.3s;
-    }
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
 
-    .card:hover {
-      transform: scale(1.05);
-    }
+nav a:hover {
+  opacity: 0.6;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-    .price {
-      color: #00ff88;
-      font-weight: bold;
-      margin: 10px 0;
-    }
+.hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
 
-    button {
-      background: #00ff88;
-      color: black;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.hero-content {
+  position: relative;
+  text-align: center;
+  animation: fadeUp 1.5s ease;
+}
 
-    button:hover {
-      background: #00cc6a;
-    }
+.hero h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5rem;
+  letter-spacing: 5px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: black;
-      margin-top: 30px;
-      font-size: 14px;
-    }
-  </style>
+.hero p {
+  margin-top: 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.hero button {
+  margin-top: 30px;
+  padding: 15px 50px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.hero button:hover {
+  background: white;
+  color: black;
+}
+
+/* SCROLL TEXT */
+.scroll-text {
+  white-space: nowrap;
+  overflow: hidden;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.scroll-text div {
+  display: inline-block;
+  padding: 20px 0;
+  animation: scroll 15s linear infinite;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* SECTION */
+.section {
+  padding: 120px 60px;
+}
+
+.section h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, black);
+  width: 100%;
+}
+
+.card-info h4 {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* ABOUT */
+.about {
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* FOOTER */
+footer {
+  padding: 50px;
+  text-align: center;
+  border-top: 1px solid #111;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  MAGNIUS 👕
-</header>
+<nav>
+  <h1>VOID</h1>
+  <div>
+    <a href="#">SHOP</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+  </div>
+</nav>
 
-<div class="hero">
-  <h1>Streetwear Collection</h1>
-  <p>Tu estilo empieza aquí 🔥</p>
+<section class="hero">
+  <video autoplay muted loop>
+    <source src="https://cdn.coverr.co/videos/coverr-man-walking-in-the-city-5170/1080p.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+    <h2>CREATE YOUR IDENTITY</h2>
+    <p>LIMITED STREETWEAR DROPS</p>
+    <button>SHOP NOW</button>
+  </div>
+</section>
+
+<div class="scroll-text">
+  <div>VOID STREETWEAR — LIMITED DROP — NO RULES — URBAN CULTURE —</div>
 </div>
 
-<div class="container">
-  <h2 style="text-align:center;">Productos</h2>
+<section class="section">
+  <h3>DROP 01</h3>
 
   <div class="products">
-<div class="card">
+   <div class="card">
   <img src="back in black.png">
   <h3>Back in Black</h3>
   <p class="price">30€</p>
@@ -228,14 +349,21 @@
   <p class="price">32€</p>
   <button>Comprar</button>
 </div>
-     </a>
+      
     </div>
-
   </div>
-</div>
+</section>
+
+<section class="section">
+  <h3>ABOUT</h3>
+  <p class="about">
+    VOID nace de la calle. No seguimos tendencias, las rompemos.
+    Cada drop es limitado. Cada pieza es identidad.
+  </p>
+</section>
 
 <footer>
-  © 2026 MAGNIUS - Todos los derechos reservados
+  © 2026 VOID — ALL RIGHTS RESERVED
 </footer>
 
 </body>

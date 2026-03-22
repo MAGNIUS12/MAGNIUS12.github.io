@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VOID STREETWEAR</title>
+<title>MAGNIUS STREETWEAR</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
 
@@ -18,7 +18,16 @@ body {
   background: #000;
   color: #fff;
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+}
+
+/* TOP BAR */
+.topbar {
+  background: #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #111;
 }
 
 /* NAV */
@@ -28,26 +37,20 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
-  z-index: 1000;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
 }
 
 nav h1 {
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 3px;
+  font-family: 'Oswald';
+  letter-spacing: 5px;
 }
 
 nav a {
   margin-left: 30px;
   text-decoration: none;
-  color: #fff;
+  color: white;
   font-size: 0.9rem;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  opacity: 0.6;
 }
 
 /* HERO */
@@ -56,43 +59,27 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-}
-
-.hero video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.4);
-}
-
-.hero-content {
-  position: relative;
   text-align: center;
-  animation: fadeUp 1.5s ease;
 }
 
 .hero h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald';
   font-size: 5rem;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
 }
 
 .hero p {
   margin-top: 10px;
-  font-weight: 300;
   letter-spacing: 2px;
 }
 
 .hero button {
   margin-top: 30px;
-  padding: 15px 50px;
+  padding: 15px 40px;
   border: 1px solid white;
   background: transparent;
   color: white;
   cursor: pointer;
-  transition: 0.4s;
 }
 
 .hero button:hover {
@@ -100,270 +87,172 @@ nav a:hover {
   color: black;
 }
 
-/* SCROLL TEXT */
-.scroll-text {
-  white-space: nowrap;
-  overflow: hidden;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-}
-
-.scroll-text div {
-  display: inline-block;
-  padding: 20px 0;
-  animation: scroll 15s linear infinite;
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-}
-
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
-}
-
-/* SECTION */
-.section {
-  padding: 120px 60px;
-}
-
-.section h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-
 /* PRODUCTS */
+.section {
+  padding: 100px 60px;
+}
+
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-}
-
-.card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
 }
 
 .card img {
   width: 100%;
-  transition: 0.5s;
-}
-
-.card:hover img {
-  transform: scale(1.1);
+  height: 350px;
+  object-fit: cover;
 }
 
 .card-info {
-  position: absolute;
-  bottom: 0;
-  padding: 20px;
-  background: linear-gradient(transparent, black);
-  width: 100%;
+  margin-top: 10px;
 }
 
 .card-info h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald';
 }
 
-/* ABOUT */
-.about {
-  max-width: 600px;
-  line-height: 1.6;
-  opacity: 0.8;
+button.buy {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background: white;
+  border: none;
+  cursor: pointer;
 }
 
 /* FOOTER */
 footer {
-  padding: 50px;
   text-align: center;
-  border-top: 1px solid #111;
+  padding: 40px;
   font-size: 0.8rem;
   opacity: 0.5;
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+  FREE SHIPPING +50€ — DROP 01 — LIMITED STOCK
+</div>
+
 <nav>
   <h1>MAGNIUS</h1>
   <div>
     <a href="#">SHOP</a>
-    <a href="#">ABOUT</a>
-    <a href="#">CONTACT</a>
+    <a href="#">INSTAGRAM</a>
   </div>
 </nav>
 
 <section class="hero">
-  <video autoplay muted loop>
-    <source src="https://cdn.coverr.co/videos/coverr-man-walking-in-the-city-5170/1080p.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-content">
-    <h2>CREATE YOUR IDENTITY</h2>
-    <p>LIMITED STREETWEAR DROPS</p>
-    <button>SHOP NOW</button>
+  <div>
+    <h2>MAGNIUS</h2>
+    <p>NOT FOR EVERYONE</p>
+    <button onclick="window.location.href='https://instagram.com/TUUSUARIO'">
+      SHOP NOW
+    </button>
   </div>
 </section>
 
-<div class="scroll-text">
-  <div>VOID STREETWEAR — LIMITED DROP — NO RULES — URBAN CULTURE —</div>
-</div>
-
 <section class="section">
-  <h3>DROP 01</h3>
+  <h2 style="margin-bottom:40px;">DROP 01</h2>
 
   <div class="products">
-   <div class="card">
-  <img src="back in black.png">
-  <h3>Back in Black</h3>
-  <p class="price">30€</p>
-  <button>Comprar</button>
-</div>
-
 <div class="card">
-  <img src="broken black.png">
-  <h3>CBroken Black</h3>
-  <p class="price">32€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="dark fade.png">
-  <h3>Dark Fade</h3>
-  <p class="price">28€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="double white broken.png">
-  <h3>Double W 4</h3>
-  <p class="price">35€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="green white.png">
-  <h3>Green White</h3>
-  <p class="price">29€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="o green.png">
-  <h3>O Green</h3>
-  <p class="price">31€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src=simple beige.png">
-  <h3>"Simple Beige</h3>
-  <p class="price">33€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="simple green.png">
-  <h3>Simple Green</h3>
-  <p class="price">27€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="simple red.png">
-  <h3>Simple Red</h3>
-  <p class="price">34€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="soft blue.png">
-  <h3>Soft Blue</h3>
-  <p class="price">36€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="toro beige.png">
-  <h3>Beige Bull</h3>
-  <p class="price">30€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="toro blue.png">
-  <h3>Blue Bull</h3>
-  <p class="price">32€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="triple brown.png">
-  <h3>Triple Brown</h3>
-  <p class="price">29€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="triple white.png">
-  <h3>Triple White</h3>
-  <p class="price">35€</p>
-  <button>Comprar</button>
-</div>
-   <div class="card">
-  <img src="blanca.png">
-  <h3>Camiseta Oversize Blanca</h3>
-  <p class="price">29€</p>
-  <button>Comprar</button>
-</div>
-
-<div class="card">
-  <img src="negra.png">
-  <h3>Camiseta Negra Premium</h3>
-  <p class="price">35€</p>
-  <button>Comprar</button>
-</div>
-<div class="card">
-  <img src="camisetaX.png">
-  <h3>Camiseta X</h3>
-  <p class="price">30€</p>
-  <button>Comprar</button>
-</div>
-<div class="card">
-  <img src="roja.png">
-  <h3>Camiseta Roja Street</h3>
-  <p class="price">32€</p>
-  <button>Comprar</button>
-</div>
-      
-    </div>
+    <img src="images/back-in-black.png">
+    <div class="card-info"><h4>BACK IN BLACK</h4><p>30€</p><button class="buy">Comprar</button></div>
   </div>
-</section>
 
-<section class="section">
-  <h3>ABOUT</h3>
-  <p class="about">
-    VOID nace de la calle. No seguimos tendencias, las rompemos.
-    Cada drop es limitado. Cada pieza es identidad.
-  </p>
+  <div class="card">
+    <img src="images/broken-black.png">
+    <div class="card-info"><h4>BROKEN BLACK</h4><p>32€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/dark-fade.png">
+    <div class="card-info"><h4>DARK FADE</h4><p>28€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/double-white-broken.png">
+    <div class="card-info"><h4>DOUBLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/green-white.png">
+    <div class="card-info"><h4>GREEN WHITE</h4><p>29€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/o-green.png">
+    <div class="card-info"><h4>O GREEN</h4><p>31€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/simple-beige.png">
+    <div class="card-info"><h4>SIMPLE BEIGE</h4><p>33€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/simple-green.png">
+    <div class="card-info"><h4>SIMPLE GREEN</h4><p>27€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/simple-red.png">
+    <div class="card-info"><h4>SIMPLE RED</h4><p>34€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/soft-blue.png">
+    <div class="card-info"><h4>SOFT BLUE</h4><p>36€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/toro-beige.png">
+    <div class="card-info"><h4>BEIGE BULL</h4><p>30€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/toro-blue.png">
+    <div class="card-info"><h4>BLUE BULL</h4><p>32€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/triple-brown.png">
+    <div class="card-info"><h4>TRIPLE BROWN</h4><p>29€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/triple-white.png">
+    <div class="card-info"><h4>TRIPLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/blanca.png">
+    <div class="card-info"><h4>WHITE CORE</h4><p>29€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/negra.png">
+    <div class="card-info"><h4>BLACK PREMIUM</h4><p>35€</p><button class="buy">Comprar</button></div>
+  </div>
+
+  <div class="card">
+    <img src="images/roja.png">
+    <div class="card-info"><h4>RED STREET</h4><p>32€</p><button class="buy">Comprar</button></div>
+  </div>
+
+</div>
+    
+    
+
+  </div>
 </section>
 
 <footer>
-  © 2026 VOID — ALL RIGHTS RESERVED
+  © 2026 MAGNIUS — NOT FOR EVERYONE
 </footer>
 
 </body>

@@ -298,7 +298,43 @@ html {
 #intro button {
   #intro {
   transition: opacity 1s ease;
-} 
+} /* 🔥 INTRO ÉPICO NIVEL DIOS */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: 1s ease;
+}
+
+#intro h1 {
+  font-size: 90px;
+  font-family: 'Oswald';
+  letter-spacing: 12px;
+  background: linear-gradient(45deg, #fff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ff88;
+  }
+  to {
+    text-shadow: 0 0 30px #00ff88, 0 0 60px #00ccff;
+  }
+}
+
+#intro button {
+  margin-top: 40px;
+  padding: 15px 50px;
+ 
 </style>
 </head>
 <script>

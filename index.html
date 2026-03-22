@@ -13,12 +13,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 25px;
-  margin-bottom: 100px;
-}
+
 body {
   background: black;
   color: white;
@@ -53,7 +48,6 @@ nav h1 {
 .hero h2 {
   font-family: 'Oswald';
   font-size: 60px;
-  letter-spacing: 4px;
 }
 
 .hero p {
@@ -72,7 +66,7 @@ nav h1 {
 
 /* SECTION */
 .section {
-  padding: 100px 40px;
+  padding: 100px 40px 200px 40px;
 }
 
 /* PRODUCTS */
@@ -82,6 +76,7 @@ nav h1 {
   gap: 25px;
 }
 
+/* CARD */
 .card {
   background: #111;
   padding: 10px;
@@ -93,6 +88,7 @@ nav h1 {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  display: block;
 }
 
 .card h4 {
@@ -111,28 +107,6 @@ nav h1 {
   background: white;
   color: black;
   cursor: pointer;
-}
-  .section {
-  padding: 100px 40px 200px 40px;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 25px;
-  margin-bottom: 120px;
-}
-
-.card {
-  background: #111;
-  padding: 10px;
-}
-
-.card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
 }
 </style>
 </head>

@@ -296,10 +296,23 @@ html {
 }
 
 #intro button {
-   
+  #intro {
+  transition: opacity 1s ease;
+} 
 </style>
 </head>
+<script>
+function enterSite() {
+  const intro = document.getElementById("intro");
+  
+  intro.style.opacity = "0";
+  intro.style.transition = "1s";
 
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 1000);
+}
+</script>
 <body>
 
 <div id="intro">

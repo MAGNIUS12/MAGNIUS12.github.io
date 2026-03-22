@@ -3,111 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAGNIUS STREETWEAR</title>
+<title>MAGNIUS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: #000;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial;
 }
 
 /* NAV */
 nav {
   position: fixed;
   width: 100%;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
-  background: rgba(0,0,0,0.6);
+  background: black;
 }
 
 nav h1 {
   font-family: 'Oswald';
-  letter-spacing: 5px;
-}
-
-nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: white;
+  letter-spacing: 4px;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 
 .hero h2 {
+  font-size: 60px;
   font-family: 'Oswald';
-  font-size: 5rem;
-  letter-spacing: 6px;
-}
-
-.hero p {
-  margin-top: 10px;
 }
 
 .hero button {
+  padding: 10px 30px;
   margin-top: 20px;
-  padding: 15px 40px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
   cursor: pointer;
 }
 
 /* PRODUCTS */
 .section {
-  padding: 100px 60px;
+  padding: 80px 20px;
 }
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
 }
 
 .card img {
   width: 100%;
-  height: 320px;
+  height: 250px;
   object-fit: cover;
 }
 
-.card-info {
-  margin-top: 10px;
-}
-
-.card-info h4 {
-  font-family: 'Oswald';
-}
-
 .buy {
-  margin-top: 10px;
   width: 100%;
   padding: 10px;
-  background: white;
-  border: none;
-  cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  opacity: 0.5;
+  margin-top: 10px;
 }
 </style>
 </head>
@@ -116,93 +80,57 @@ footer {
 
 <nav>
   <h1>MAGNIUS</h1>
-  <div>
-    <a href="#">SHOP</a>
-    <a href="#">CONTACT</a>
-  </div>
 </nav>
 
-<section class="hero">
-  <div>
-    <h2>MAGNIUS</h2>
-    <p>NOT FOR EVERYONE</p>
-    <button onclick="document.getElementById('shop').scrollIntoView()">
-      SHOP NOW
-    </button>
-  </div>
-</section>
+<div class="hero">
+  <h2>MAGNIUS</h2>
+  <p>NOT FOR EVERYONE</p>
+  <button onclick="document.getElementById('shop').scrollIntoView()">SHOP</button>
+</div>
 
-<section class="section" id="shop">
-  <h2 style="margin-bottom:40px;">DROP 01</h2>
+<div class="section" id="shop">
+  <h2>PRODUCTOS</h2>
 
   <div class="products">
 
     <div class="card">
       <img src="back-in-black.png">
-      <div class="card-info"><h4>BACK IN BLACK</h4><p>30€</p><button class="buy">Comprar</button></div>
+      <p>BACK IN BLACK - 30€</p>
+      <button class="buy">Comprar</button>
     </div>
 
     <div class="card">
       <img src="broken-black.png">
-      <div class="card-info"><h4>BROKEN BLACK</h4><p>32€</p><button class="buy">Comprar</button></div>
+      <p>BROKEN BLACK - 32€</p>
+      <button class="buy">Comprar</button>
     </div>
 
     <div class="card">
       <img src="dark-fade.png">
-      <div class="card-info"><h4>DARK FADE</h4><p>28€</p><button class="buy">Comprar</button></div>
-    </div>
-
-    <div class="card">
-      <img src="double-white-broken.png">
-      <div class="card-info"><h4>DOUBLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
+      <p>DARK FADE - 28€</p>
+      <button class="buy">Comprar</button>
     </div>
 
     <div class="card">
       <img src="simple-beige.png">
-      <div class="card-info"><h4>SIMPLE BEIGE</h4><p>33€</p><button class="buy">Comprar</button></div>
-    </div>
-
-    <div class="card">
-      <img src="simple-green.png">
-      <div class="card-info"><h4>SIMPLE GREEN</h4><p>27€</p><button class="buy">Comprar</button></div>
+      <p>SIMPLE BEIGE - 33€</p>
+      <button class="buy">Comprar</button>
     </div>
 
     <div class="card">
       <img src="simple-red.png">
-      <div class="card-info"><h4>SIMPLE RED</h4><p>34€</p><button class="buy">Comprar</button></div>
-    </div>
-
-    <div class="card">
-      <img src="soft-blue.png">
-      <div class="card-info"><h4>SOFT BLUE</h4><p>36€</p><button class="buy">Comprar</button></div>
-    </div>
-
-    <div class="card">
-      <img src="triple-white.png">
-      <div class="card-info"><h4>TRIPLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
+      <p>SIMPLE RED - 34€</p>
+      <button class="buy">Comprar</button>
     </div>
 
     <div class="card">
       <img src="negra.png">
-      <div class="card-info"><h4>BLACK PREMIUM</h4><p>35€</p><button class="buy">Comprar</button></div>
-    </div>
-
-    <div class="card">
-      <img src="blanca.png">
-      <div class="card-info"><h4>WHITE CORE</h4><p>29€</p><button class="buy">Comprar</button></div>
-    </div>
-
-    <div class="card">
-      <img src="roja.png">
-      <div class="card-info"><h4>RED STREET</h4><p>32€</p><button class="buy">Comprar</button></div>
+      <p>BLACK PREMIUM - 35€</p>
+      <button class="buy">Comprar</button>
     </div>
 
   </div>
-</section>
-
-<footer>
-  © 2026 MAGNIUS — NOT FOR EVERYONE
-</footer>
+</div>
 
 </body>
 </html>

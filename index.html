@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 🖱️ CURSOR */
+/* 🖱️ CURSOR PRO */
 .cursor {
   width: 300px;
   height: 300px;
@@ -31,14 +31,14 @@ body {
   background: radial-gradient(circle, rgba(0,255,136,0.15), transparent 70%);
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
 }
 
 /* 🎬 VIDEO */
 .video-bg {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .video-bg video {
@@ -52,7 +52,7 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), black);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), #000);
   z-index: -1;
 }
 
@@ -106,10 +106,11 @@ nav {
   text-align: center;
 }
 
-/* TEXTO LETRA A LETRA */
+/* TEXTO */
 .hero h2 span {
   opacity: 0;
   display: inline-block;
+  transform: translateY(20px);
   animation: letter 0.05s forwards;
 }
 
@@ -122,11 +123,6 @@ nav {
   font-family: 'Oswald';
 }
 
-.hero p {
-  margin-top: 10px;
-  opacity: 0.6;
-}
-
 /* BOTÓN */
 .hero button {
   margin-top: 40px;
@@ -135,6 +131,11 @@ nav {
   border: none;
   background: linear-gradient(45deg,#00ff88,#00ccff);
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
 }
 
 /* SECTION */
@@ -204,7 +205,7 @@ nav {
   cursor: pointer;
 }
 
-/* SCROLL SUAVE */
+/* SCROLL */
 html {
   scroll-behavior: smooth;
 }
@@ -216,8 +217,9 @@ html {
 
 <div class="cursor"></div>
 
+<!-- 🎬 VIDEO -->
 <div class="video-bg">
-  <video autoplay muted loop>
+  <video autoplay muted loop playsinline>
     <source src="video.mp4" type="video/mp4">
   </video>
 </div>
@@ -234,7 +236,6 @@ html {
 
 <div class="hero">
   <h2 id="title"></h2>
-  <p>NOT FOR EVERYONE</p>
   <button onclick="scrollToShop()">SHOP</button>
 </div>
 
@@ -244,40 +245,40 @@ html {
   <div class="products">
 
     <!-- TODAS -->
-    <div class="card"><img src="back-in-black.png"><h4>BACK IN BLACK</h4><p>30€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="broken-black.png"><h4>BROKEN BLACK</h4><p>32€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="dark-fade.png"><h4>DARK FADE</h4><p>28€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="double-white-broken.png"><h4>DOUBLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="green-white.png"><h4>GREEN WHITE</h4><p>29€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="o-green.png"><h4>O GREEN</h4><p>31€</p><button class="buy">Comprar</button></div>
+    <div class="card"><img src="back-in-black.png"><h4>BACK IN BLACK</h4><p>30€</p><button class="buy" onclick="openProduct('back-in-black.png')">Comprar</button></div>
+    <div class="card"><img src="broken-black.png"><h4>BROKEN BLACK</h4><p>32€</p><button class="buy" onclick="openProduct('broken-black.png')">Comprar</button></div>
+    <div class="card"><img src="dark-fade.png"><h4>DARK FADE</h4><p>28€</p><button class="buy" onclick="openProduct('dark-fade.png')">Comprar</button></div>
+    <div class="card"><img src="double-white-broken.png"><h4>DOUBLE WHITE</h4><p>35€</p><button class="buy" onclick="openProduct('double-white-broken.png')">Comprar</button></div>
+    <div class="card"><img src="green-white.png"><h4>GREEN WHITE</h4><p>29€</p><button class="buy" onclick="openProduct('green-white.png')">Comprar</button></div>
+    <div class="card"><img src="o-green.png"><h4>O GREEN</h4><p>31€</p><button class="buy" onclick="openProduct('o-green.png')">Comprar</button></div>
 
-    <div class="card"><img src="simple-beige.png"><h4>SIMPLE BEIGE</h4><p>33€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="simple-green.png"><h4>SIMPLE GREEN</h4><p>27€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="simple-red.png"><h4>SIMPLE RED</h4><p>34€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="soft-blue.png"><h4>SOFT BLUE</h4><p>36€</p><button class="buy">Comprar</button></div>
+    <div class="card"><img src="simple-beige.png"><h4>SIMPLE BEIGE</h4><p>33€</p><button class="buy" onclick="openProduct('simple-beige.png')">Comprar</button></div>
+    <div class="card"><img src="simple-green.png"><h4>SIMPLE GREEN</h4><p>27€</p><button class="buy" onclick="openProduct('simple-green.png')">Comprar</button></div>
+    <div class="card"><img src="simple-red.png"><h4>SIMPLE RED</h4><p>34€</p><button class="buy" onclick="openProduct('simple-red.png')">Comprar</button></div>
+    <div class="card"><img src="soft-blue.png"><h4>SOFT BLUE</h4><p>36€</p><button class="buy" onclick="openProduct('soft-blue.png')">Comprar</button></div>
 
-    <div class="card"><img src="toro-beige.png"><h4>BEIGE BULL</h4><p>30€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="toro-blue.png"><h4>BLUE BULL</h4><p>32€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="triple-brown.png"><h4>TRIPLE BROWN</h4><p>29€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="triple-white.png"><h4>TRIPLE WHITE</h4><p>35€</p><button class="buy">Comprar</button></div>
+    <div class="card"><img src="toro-beige.png"><h4>BEIGE BULL</h4><p>30€</p><button class="buy" onclick="openProduct('toro-beige.png')">Comprar</button></div>
+    <div class="card"><img src="toro-blue.png"><h4>BLUE BULL</h4><p>32€</p><button class="buy" onclick="openProduct('toro-blue.png')">Comprar</button></div>
+    <div class="card"><img src="triple-brown.png"><h4>TRIPLE BROWN</h4><p>29€</p><button class="buy" onclick="openProduct('triple-brown.png')">Comprar</button></div>
+    <div class="card"><img src="triple-white.png"><h4>TRIPLE WHITE</h4><p>35€</p><button class="buy" onclick="openProduct('triple-white.png')">Comprar</button></div>
 
-    <div class="card"><img src="blanca.png"><h4>WHITE CORE</h4><p>29€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="negra.png"><h4>BLACK PREMIUM</h4><p>35€</p><button class="buy">Comprar</button></div>
-    <div class="card"><img src="roja.png"><h4>RED STREET</h4><p>32€</p><button class="buy">Comprar</button></div>
+    <div class="card"><img src="blanca.png"><h4>WHITE CORE</h4><p>29€</p><button class="buy" onclick="openProduct('blanca.png')">Comprar</button></div>
+    <div class="card"><img src="negra.png"><h4>BLACK PREMIUM</h4><p>35€</p><button class="buy" onclick="openProduct('negra.png')">Comprar</button></div>
+    <div class="card"><img src="roja.png"><h4>RED STREET</h4><p>32€</p><button class="buy" onclick="openProduct('roja.png')">Comprar</button></div>
 
   </div>
 </div>
 
 <script>
 
-/* TEXTO LETRA A LETRA */
+/* TEXTO */
 const text = "MAGNIUS";
 const title = document.getElementById("title");
 
-text.split("").forEach((letter, i) => {
-  const span = document.createElement("span");
-  span.innerText = letter;
-  span.style.animationDelay = i * 0.1 + "s";
+text.split("").forEach((l,i)=>{
+  const span=document.createElement("span");
+  span.innerText=l;
+  span.style.animationDelay=i*0.1+"s";
   title.appendChild(span);
 });
 
@@ -288,25 +289,26 @@ function scrollToShop() {
 
 /* CARDS */
 const cards = document.querySelectorAll(".card");
-
 window.addEventListener("scroll", () => {
-  cards.forEach((card, i) => {
-    const rect = card.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      setTimeout(() => {
-        card.classList.add("show");
-      }, i * 80);
+  cards.forEach((card,i)=>{
+    const rect=card.getBoundingClientRect();
+    if(rect.top<window.innerHeight-50){
+      setTimeout(()=>card.classList.add("show"), i*80);
     }
   });
 });
 
 /* CURSOR */
 const cursor = document.querySelector(".cursor");
-
-document.addEventListener("mousemove", e => {
-  cursor.style.top = e.clientY + "px";
-  cursor.style.left = e.clientX + "px";
+document.addEventListener("mousemove", e=>{
+  cursor.style.top=e.clientY+"px";
+  cursor.style.left=e.clientX+"px";
 });
+
+/* PRODUCTO */
+function openProduct(img){
+  window.location.href="product.html?img="+img;
+}
 
 </script>
 

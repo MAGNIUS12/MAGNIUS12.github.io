@@ -182,17 +182,23 @@ nav h1{
   background:linear-gradient(45deg,#00ff88,#00ccff);
   cursor:pointer;
 }
-
+#bg-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
 </style>
 </head>
 
 <body>
 
-<!-- 🎬 TU VIDEO (COVERR) -->
 <video autoplay muted loop playsinline id="bg-video">
-  <source src="https://cdn.coverr.co/videos/coverr-night-traffic-in-the-city-1573/1080p.mp4" type="video/mp4">
+  <source src="https://cdn.pixabay.com/video/2023/03/25/156686-811048122_large.mp4" type="video/mp4">
 </video>
-
 <div class="overlay"></div>
 
 <!-- INTRO -->

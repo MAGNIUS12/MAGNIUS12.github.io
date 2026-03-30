@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAGNIUS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,41 +13,49 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:'Inter',sans-serif;
   background:#0a0a0a;
-  color:#f5f5f5;
+  color:#eee;
+  font-family:'Inter',sans-serif;
   overflow-x:hidden;
 }
 
-/* 🔥 FONDO DINÁMICO */
-body::before{
-  content:"";
+/* 🔥 INTRO ÉPICA */
+#intro{
   position:fixed;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle,#c6a96f,transparent 70%);
-  top:-200px;
-  left:-200px;
-  opacity:0.15;
-  filter:blur(120px);
-  animation:moveLight 12s infinite alternate;
-}
-
-@keyframes moveLight{
-  0%{transform:translate(0,0);}
-  100%{transform:translate(400px,300px);}
-}
-
-/* ✨ CURSOR */
-.cursor{
-  position:fixed;
-  width:18px;
-  height:18px;
-  border:1px solid #c6a96f;
-  border-radius:50%;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
+  inset:0;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
   z-index:9999;
+  animation:fadeOut 3.5s ease forwards 3s;
+}
+
+#intro h1{
+  font-size:120px;
+  font-family:'Playfair Display';
+  letter-spacing:10px;
+  color:#d4af37;
+  opacity:0;
+  animation:luxAppear 2s ease forwards;
+}
+
+#intro p{
+  margin-top:20px;
+  letter-spacing:4px;
+  opacity:0;
+  animation:luxAppear 2s ease forwards 1s;
+}
+
+/* ANIMACIONES INTRO */
+@keyframes luxAppear{
+  0%{opacity:0;transform:translateY(40px);letter-spacing:20px;}
+  100%{opacity:1;transform:translateY(0);letter-spacing:8px;}
+}
+
+@keyframes fadeOut{
+  to{opacity:0;visibility:hidden;}
 }
 
 /* NAV */
@@ -81,34 +89,36 @@ nav h1{
   font-size:100px;
   font-family:'Playfair Display';
   letter-spacing:5px;
-  animation:fadeUp 1.5s ease;
+  color:#d4af37;
+  opacity:0;
+  animation:fadeUp 1.5s ease forwards 3.5s;
 }
 
 .hero p{
   margin-top:10px;
   opacity:0.6;
   letter-spacing:3px;
-  animation:fadeUp 2s ease;
+  animation:fadeUp 1.5s ease forwards 4s;
 }
 
-/* BOTÓN */
+/* BOTÓN LUJO */
 .hero button{
   margin-top:40px;
   padding:14px 60px;
   border-radius:50px;
-  border:1px solid #c6a96f;
+  border:1px solid #d4af37;
   background:transparent;
-  color:#c6a96f;
+  color:#d4af37;
   cursor:pointer;
   transition:0.3s;
-  animation:fadeUp 2.5s ease;
+  animation:fadeUp 1.5s ease forwards 4.5s;
 }
 
 .hero button:hover{
-  background:#c6a96f;
+  background:#d4af37;
   color:black;
   transform:scale(1.08);
-  box-shadow:0 0 25px rgba(198,169,111,0.6);
+  box-shadow:0 0 25px rgba(212,175,55,0.5);
 }
 
 /* SECTION */
@@ -135,12 +145,12 @@ nav h1{
   overflow:hidden;
 }
 
-/* BRILLO */
+/* brillo */
 .card::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(120deg,transparent,rgba(198,169,111,0.3),transparent);
+  background:linear-gradient(120deg,transparent,rgba(212,175,55,0.3),transparent);
   opacity:0;
   transition:0.5s;
 }
@@ -156,7 +166,7 @@ nav h1{
 
 .card:hover{
   transform:translateY(-15px) scale(1.03);
-  box-shadow:0 30px 60px rgba(198,169,111,0.2);
+  box-shadow:0 30px 60px rgba(212,175,55,0.2);
 }
 
 /* IMAGEN */
@@ -166,11 +176,6 @@ nav h1{
   object-fit:contain;
   background:white;
   border-radius:12px;
-  transition:0.5s;
-}
-
-.card:hover img{
-  transform:scale(1.1) rotate(1deg);
 }
 
 /* TEXTO */
@@ -180,8 +185,7 @@ nav h1{
 }
 
 .card p{
-  margin-top:5px;
-  color:#c6a96f;
+  color:#d4af37;
   font-weight:500;
 }
 
@@ -190,18 +194,15 @@ nav h1{
   margin-top:12px;
   padding:12px;
   border-radius:30px;
-  border:1px solid #c6a96f;
+  border:1px solid #d4af37;
   background:transparent;
-  color:#c6a96f;
+  color:#d4af37;
   cursor:pointer;
-  transition:0.3s;
 }
 
 .buy:hover{
-  background:#c6a96f;
+  background:#d4af37;
   color:black;
-  transform:scale(1.05);
-  box-shadow:0 0 20px rgba(198,169,111,0.6);
 }
 
 /* ANIMACIÓN */
@@ -215,18 +216,25 @@ nav h1{
 
 <body>
 
-<div class="cursor"></div>
+<!-- INTRO -->
+<div id="intro">
+  <h1>MAGNIUS</h1>
+  <p>EXCLUSIVE DROP</p>
+</div>
 
+<!-- NAV -->
 <nav>
   <h1>MAGNIUS</h1>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <h2>MAGNIUS</h2>
   <p>NOT FOR EVERYONE</p>
   <button onclick="scrollToShop()">SHOP</button>
 </div>
 
+<!-- SHOP -->
 <div class="section" id="shop">
   <h2 style="font-family:'Playfair Display';margin-bottom:60px;">DROP 01</h2>
 
@@ -264,7 +272,7 @@ function scrollToShop(){
   document.getElementById("shop").scrollIntoView({behavior:"smooth"});
 }
 
-/* CARDS ANIMACIÓN */
+/* CARDS */
 const cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{
@@ -274,14 +282,6 @@ window.addEventListener("scroll",()=>{
       card.classList.add("show");
     }
   });
-});
-
-/* CURSOR */
-const cursor=document.querySelector(".cursor");
-
-document.addEventListener("mousemove",e=>{
-  cursor.style.left=e.clientX+"px";
-  cursor.style.top=e.clientY+"px";
 });
 
 </script>

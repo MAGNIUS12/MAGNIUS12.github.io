@@ -19,55 +19,23 @@ body{
   background: radial-gradient(circle at top,#050505,#000);
 }
 
-/* 🎬 VIDEO */
-#bg-video{
+/* 💡 LUZ EN MOVIMIENTO */
+body::before{
+  content:"";
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-2;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,#00ff88,transparent 70%);
+  top:-200px;
+  left:-200px;
+  opacity:0.15;
+  filter:blur(100px);
+  animation:moveLight 10s infinite alternate;
 }
 
-/* OVERLAY */
-.overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.4);
-  z-index:-1;
-}
-
-/* 🔥 INTRO PRO */
-#intro{
-  position:fixed;
-  inset:0;
-  background:black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-  animation:introFade 3s ease forwards;
-}
-
-#intro h1{
-  font-size:120px;
-  font-family:'Oswald';
-  letter-spacing:10px;
-  background:linear-gradient(45deg,#00ff88,#00ccff,#7a00ff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:zoomGlow 2s ease;
-}
-
-@keyframes zoomGlow{
-  from{transform:scale(0.5);opacity:0;filter:blur(20px);}
-  to{transform:scale(1);opacity:1;filter:blur(0);}
-}
-
-@keyframes introFade{
-  0%,85%{opacity:1;}
-  100%{opacity:0;visibility:hidden;}
+@keyframes moveLight{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(300px,200px);}
 }
 
 /* NAV */
@@ -97,37 +65,19 @@ nav h1{
   text-align:center;
 }
 
-/* TEXTO ANIMADO */
-.hero h2 span{
-  opacity:0;
-  display:inline-block;
-  transform:translateY(40px);
-  animation:letters 0.6s forwards;
-}
-
-.hero h2 span:nth-child(n){
-  animation-delay:calc(0.05s * var(--i));
-}
-
-@keyframes letters{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
 .hero h2{
   font-size:90px;
   font-family:'Oswald';
   background:linear-gradient(45deg,#fff,#00ff88,#00ccff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  text-shadow:0 0 25px rgba(0,255,136,0.3);
 }
 
 .hero p{
   opacity:0.6;
   margin-top:10px;
-  letter-spacing:2px;
+  letter-spacing:3px;
 }
 
 /* BOTÓN */
@@ -169,9 +119,10 @@ nav h1{
   opacity:0;
   transform:translateY(50px);
   position:relative;
+  overflow:hidden;
 }
 
-/* brillo */
+/* BRILLO */
 .card::before{
   content:"";
   position:absolute;
@@ -240,32 +191,25 @@ nav h1{
 
 <body>
 
-<video autoplay muted loop playsinline id="bg-video">
-  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<div id="intro">
-  <h1>MAGNIUS</h1>
-</div>
-
+<!-- NAV -->
 <nav>
   <h1>MAGNIUS</h1>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <h2 id="title"></h2>
+  <h2>MAGNIUS</h2>
   <p>NOT FOR EVERYONE</p>
   <button onclick="scrollToShop()">SHOP</button>
 </div>
 
+<!-- SHOP -->
 <div class="section" id="shop">
   <h2>DROP 01</h2>
 
   <div class="products">
 
-    <!-- TUS CAMISETAS -->
+    <!-- TUS CAMISETAS (SIN CAMBIOS) -->
     <div class="card"><img src="back-in-black.png"><h4>BACK IN BLACK</h4><p>30€</p><button class="buy">Comprar</button></div>
     <div class="card"><img src="broken-black.png"><h4>BROKEN BLACK</h4><p>32€</p><button class="buy">Comprar</button></div>
     <div class="card"><img src="dark-fade.png"><h4>DARK FADE</h4><p>28€</p><button class="buy">Comprar</button></div>
@@ -291,19 +235,6 @@ nav h1{
 </div>
 
 <script>
-
-/* TEXTO LETRA A LETRA */
-const text = "MAGNIUS";
-const title = document.getElementById("title");
-
-text.split("").forEach((letter,i)=>{
-  const span=document.createElement("span");
-  span.innerText=letter;
-  span.style.setProperty('--i',i);
-  title.appendChild(span);
-});
-
-/* SCROLL */
 function scrollToShop(){
   document.getElementById("shop").scrollIntoView({behavior:"smooth"});
 }
@@ -318,7 +249,6 @@ window.addEventListener("scroll",()=>{
     }
   });
 });
-
 </script>
 
 </body>

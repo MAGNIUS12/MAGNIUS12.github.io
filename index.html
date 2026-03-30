@@ -29,7 +29,7 @@ body{
   z-index:-2;
 }
 
-/* OSCURECER */
+/* OSCURECER (BAJADO PARA QUE SE VEA) */
 .overlay{
   position:fixed;
   inset:0;
@@ -182,23 +182,17 @@ nav h1{
   background:linear-gradient(45deg,#00ff88,#00ccff);
   cursor:pointer;
 }
-#bg-video{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-2;
-}
+
 </style>
 </head>
 
 <body>
 
+<!-- 🎬 VIDEO QUE FUNCIONA SIEMPRE -->
 <video autoplay muted loop playsinline id="bg-video">
-  <source src="https://cdn.pixabay.com/video/2023/03/25/156686-811048122_large.mp4" type="video/mp4">
+  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
 </video>
+
 <div class="overlay"></div>
 
 <!-- INTRO -->
@@ -249,8 +243,6 @@ nav h1{
 </div>
 
 <script>
-
-/* SCROLL */
 function scrollToShop(){
   document.getElementById("shop").scrollIntoView({behavior:"smooth"});
 }
@@ -265,18 +257,6 @@ window.addEventListener("scroll",()=>{
     }
   });
 });
-
-/* 🔥 FORZAR VIDEO (CLAVE) */
-const video = document.getElementById("bg-video");
-
-video.play().catch(() => {
-  console.log("autoplay bloqueado");
-});
-
-document.addEventListener("click", () => {
-  video.play();
-});
-
 </script>
 
 </body>
